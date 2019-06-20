@@ -1,5 +1,6 @@
 # Tools
-Basic preprocesses of datasets including 
+Basic preprocesses of datasets and other common functions are recorded, including
 - face detection
 - file organization
-and other common functions are recorded.
+
+
