@@ -9,7 +9,7 @@ do
     done
 done
 
-# generate train.csv
+# generate train.txt
 #! /bin/bash
 for idx in $(seq -w 1 23)
 do
@@ -33,7 +33,7 @@ do
     done
 done
 
-# generate test.csv
+# generate test.txt
 #! /bin/bash
 for idx in $(seq -w 24 30)
 do
