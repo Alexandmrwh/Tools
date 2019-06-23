@@ -56,3 +56,17 @@ do
         cp $file ~/Desktop/GANimation-master/sample_dataset/ImgsAUs/
     done
 done
+
+# pair jpg and csv
+#! /bin/bash
+cd ~/Desktop/GANimation-master/sample_dataset/imgs/
+for file in *.csv;
+    do
+        file=${file:0:18}
+        filename=$file".jpg"
+        if [ -f "$filename" ]; then
+            echo $filename >> ~/Desktop/GANimation-master/sample_dataset/filename.txt
+        else
+            echo $filename >> ~/Desktop/GANimation-master/sample_dataset/nosuchfile.txt
+        fi
+    done
