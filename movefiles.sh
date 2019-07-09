@@ -22,42 +22,7 @@ do
     done
 done
 
-# put test AU files from folder 24 to folder 30 (both included) to the dir
-#! /bin/bash
-for idx in $(seq -w 24 30)
-do
-    cd ~/Documents/10${idx}
-    for file in `ls`;
-    do
-        cp ~/Documents/10${idx}/$file ~/Desktop/GANimation-master/sample_dataset/ImgsAUs/
-    done
-done
-
-# generate test.txt
-#! /bin/bash
-for idx in $(seq -w 24 30)
-do
-    cd ~/Documents/10${idx}
-    for file in `ls`; 2
-    do
-        if [ "${file##*.}" == "csv" ]; then
-            echo "${file%%.*}.jpg" >> ~/Documents/test.txt
-        fi
-    done
-done
-
-# put all images to the dir
-#! /bin/bash
-for idx in $(seq -w 1 30)
-do
-    cd ~/Desktop/GANimation-master/sample_dataset/imgs/10${idx}
-    for file in `ls`;
-    do
-        cp $file ~/Desktop/GANimation-master/sample_dataset/ImgsAUs/
-    done
-done
-
-# pair jpg and csv
+# pair jpg and csv with the same name
 #! /bin/bash
 cd ~/Desktop/GANimation-master/sample_dataset/imgs/
 for file in *.csv;
@@ -70,3 +35,21 @@ for file in *.csv;
             echo $filename >> ~/Desktop/GANimation-master/sample_dataset/nosuchfile.txt
         fi
     done
+
+# rename images from ImageNet to the naming conventions of miniImagenet
+# put all images needed in miniImagenet in "images" folder
+#! /bin/bash
+cd /home/wuhan/datasets/miniImagenet/
+{
+    read
+    while IFS=, read -r file label || [ -n "$file" ]; 
+    do
+        category=${file:0:9}
+        fileidx=${file:9:9}
+        # remove the zeros
+        idx=$(echo $fileidx | sed 's/^0*//')
+        filename=$category"_"$idx"JPEG"
+        echo "$filename"
+        cp /dataset/eval_dataset/imagenet/cicANDcod/original_images/images/$filename /home/wuhan/datasets/miniImagenet/images/$file
+    done 
+} < train.csv
