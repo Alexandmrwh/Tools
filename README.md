@@ -5,7 +5,6 @@ Basic preprocesses of datasets and other common functions are recorded, includin
 - Txt file convert to csv
 - Dockerfile: basics, pytorch1.1.0 with CUDA support (still need to simplify and augment) 
 
-$`x_a=y_b`$
 Batch: 4(img)x8(GPU) lr=0.02, ^{$`\dagger`$} means lr=0.01
 | Model         | image size | # FLOPs | # params | mAP (1x/2x) |
 | :------------ |:----------:|:-------:|:--------:|:-------------:|
