@@ -18,5 +18,6 @@ Basic preprocesses of datasets and other common functions are recorded, includin
 | mv2-c256 2-stage SyncBN     | 1280x800 |  | 　| 30.1/- |
 
 
-Batch: 4(img)x8(GPU) lr=0.02, means lr=0.01
-$`\dagger`$ means
+Batch: 4(img)x8(GPU) lr=0.02, means lr=0.01 
+
+$ \sum_{\forall i}{x_i^{2}} $
