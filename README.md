@@ -20,4 +20,4 @@ Basic preprocesses of datasets and other common functions are recorded, includin
 
 Batch: 4(img)x8(GPU) lr=0.02, means lr=0.01 
 
-$ \sum_{\forall i}{x_i^{2}} $
+![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}]
